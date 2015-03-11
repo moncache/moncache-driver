@@ -32,3 +32,14 @@ Globals based presentation:
 ("field", "t") = "boolean"
 ("field", "v") = "false"
 ```
+
+### JSON / **number** field:
+```json
+{"field": 1234567890}
+```
+
+Globals based presentation:
+```lisp
+("field", "t") = "number"
+("field", "v") = 1234567890
+```
