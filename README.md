@@ -67,14 +67,35 @@ Globals based presentation:
 
 ### JSON / **object** field:
 ```json
-{"user": {"id": 1, "login": "jxcoder"}}
+{"user": {
+  "id": 1,
+  "login": "jxcoder"
+}}
 ```
 
 Globals based presentation:
 ```lisp
 ("user", "t") = "object"
+
 ("user", "v", "id", "t") = "number"
 ("user", "v", "id", "v") = 1
+
 ("user", "v", "login", "t") = "string"
 ("user", "v", "login", "v") = "jxcoder"
+```
+
+### JSON / **object** field:
+```json
+{"user": [1, "jxcoder"]}
+```
+
+Globals based presentation:
+```lisp
+("user", "t") = "array"
+
+("user", "v", 0, "t") = "number"
+("user", "v", 0, "v") = 1
+
+("user", "v", 1, "t") = "string"
+("user", "v", 1, "v") = "jxcoder"
 ```
