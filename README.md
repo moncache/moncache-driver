@@ -1,7 +1,12 @@
 # moncache-driver
 MonCache driver
 
-**null** field:
+JSON / object with **null** field:
 ```json
-{"data": null}
+{"field": null}
+```
+
+Globals based presentation:
+```
+("field", "t") = "null"
 ```
