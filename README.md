@@ -7,6 +7,6 @@ JSON / object with **null** field:
 ```
 
 Globals based presentation:
-```lisp
+```scala
 ("field", "t") = "null"
 ```
