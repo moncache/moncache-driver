@@ -56,7 +56,7 @@ Globals based presentation:
 ```
 
 ### JSON / *ObjectId* field:
-```json
+```js
 {"field": ObjectId("51e062189c6ae665454e301d")}
 ```
 
