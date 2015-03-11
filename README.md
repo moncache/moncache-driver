@@ -129,13 +129,15 @@ Globals based presentation:
 ```lisp
 ("user", "t") = "array"
 
-("user", "v", 0, "t") = "array"
+("user", "v", 0, "t") = "object"
 
 ("user", "v", 0, "v", "x", "t") = "number"
 ("user", "v", 0, "v", "x", "v") = 1.23
 
 ("user", "v", 0, "v", "y", "t") = "number"
 ("user", "v", 0, "v", "y", "v") = 4.56
+
+("user", "v", 1, "t") = "object"
 
 ("user", "v", 1, "v", "x", "t") = "number"
 ("user", "v", 1, "v", "x", "v") = 7.89
