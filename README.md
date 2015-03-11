@@ -1,7 +1,7 @@
 # moncache-driver
 MonCache driver
 
-### JSON / *null* field:
+### Document / *null*
 ```json
 {"field": null}
 ```
@@ -11,8 +11,8 @@ Globals based presentation:
 ("field", "t") = "null"
 ```
 
-### JSON / *true* field:
-```json
+### Document / *true*
+```js
 {"field": true}
 ```
 
@@ -22,8 +22,8 @@ Globals based presentation:
 ("field", "v") = "true"
 ```
 
-### JSON / *false* field:
-```json
+### Document / *false*
+```js
 {"field": false}
 ```
 
@@ -33,8 +33,8 @@ Globals based presentation:
 ("field", "v") = "false"
 ```
 
-### JSON / *number* field:
-```json
+### Document / *number*
+```js
 {"field": 1234567890}
 ```
 
@@ -44,8 +44,8 @@ Globals based presentation:
 ("field", "v") = 1234567890
 ```
 
-### JSON / *string* field:
-```json
+### Document / *string*
+```js
 {"field": "Cogito ergo sum"}
 ```
 
@@ -55,7 +55,7 @@ Globals based presentation:
 ("field", "v") = "Cogito ergo sum"
 ```
 
-### JSON / *ObjectId* field:
+### Document / *ObjectId*
 ```js
 {"field": ObjectId("51e062189c6ae665454e301d")}
 ```
@@ -66,8 +66,8 @@ Globals based presentation:
 ("field", "v") = "51e062189c6ae665454e301d"
 ```
 
-### JSON / Empty *object* field:
-```json
+### Document / *Empty object*
+```js
 {"field": {}}
 ```
 
@@ -76,8 +76,8 @@ Globals based presentation:
 ("field", "t") = "object"
 ```
 
-### JSON / *object* field:
-```json
+### Document / *object*
+```js
 {"user": {
   "id": 1,
   "login": "jxcoder"
@@ -95,8 +95,8 @@ Globals based presentation:
 ("user", "v", "login", "v") = "jxcoder"
 ```
 
-### JSON / *array* field:
-```json
+### Document / *array*
+```js
 {"user": [1, "jxcoder"]}
 ```
 
@@ -109,4 +109,37 @@ Globals based presentation:
 
 ("user", "v", 1, "t") = "string"
 ("user", "v", 1, "v") = "jxcoder"
+```
+
+### JSON / *object* in *array*
+```js
+{"points": [
+  {
+    "x", 1.23,
+    "y": 4.56
+  },
+  {
+    "x": 7.89,
+    "y": 0.12
+  }
+]}
+```
+
+Globals based presentation:
+```lisp
+("user", "t") = "array"
+
+("user", "v", 0, "t") = "array"
+
+("user", "v", 0, "v", "x", "t") = "number"
+("user", "v", 0, "v", "x", "v") = 1.23
+
+("user", "v", 0, "v", "y", "t") = "number"
+("user", "v", 0, "v", "y", "v") = 4.56
+
+("user", "v", 1, "v", "x", "t") = "number"
+("user", "v", 1, "v", "x", "v") = 7.89
+
+("user", "v", 1, "v", "y", "t") = "number"
+("user", "v", 1, "v", "y", "v") = 0.12
 ```
