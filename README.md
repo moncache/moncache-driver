@@ -11,7 +11,7 @@ Globals based presentation:
 ("field", "t") = "null"
 ```
 
-### JSON / **true** field:
+### JSON / *true* field:
 ```json
 {"field": true}
 ```
@@ -22,7 +22,7 @@ Globals based presentation:
 ("field", "v") = "true"
 ```
 
-### JSON / **false** field:
+### JSON / *false* field:
 ```json
 {"field": false}
 ```
@@ -33,7 +33,7 @@ Globals based presentation:
 ("field", "v") = "false"
 ```
 
-### JSON / **number** field:
+### JSON / *number* field:
 ```json
 {"field": 1234567890}
 ```
@@ -44,7 +44,7 @@ Globals based presentation:
 ("field", "v") = 1234567890
 ```
 
-### JSON / **string** field:
+### JSON / *string* field:
 ```json
 {"field": "Cogito ergo sum"}
 ```
@@ -55,7 +55,18 @@ Globals based presentation:
 ("field", "v") = "Cogito ergo sum"
 ```
 
-### JSON / Empty **object** field:
+### JSON / *ObjectId* field:
+```json
+{"field": ObjectId("51e062189c6ae665454e301d")}
+```
+
+Globals based presentation:
+```lisp
+("field", "t") = "objectid"
+("field", "v") = "51e062189c6ae665454e301d"
+```
+
+### JSON / Empty *object* field:
 ```json
 {"field": {}}
 ```
@@ -65,7 +76,7 @@ Globals based presentation:
 ("field", "t") = "object"
 ```
 
-### JSON / **object** field:
+### JSON / *object* field:
 ```json
 {"user": {
   "id": 1,
@@ -84,7 +95,7 @@ Globals based presentation:
 ("user", "v", "login", "v") = "jxcoder"
 ```
 
-### JSON / **object** field:
+### JSON / *array* field:
 ```json
 {"user": [1, "jxcoder"]}
 ```
